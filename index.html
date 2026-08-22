@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Surprise - Index</title>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    background: linear-gradient(135deg, #ffd9e9, #f4a5c5, #ffe5ef);
+    color: #71304c;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255,255,255,.48);
+    border: 1px solid rgba(255,255,255,.75);
+    border-radius: 32px;
+    backdrop-filter: blur(12px);
+    padding: 50px 40px;
+    box-shadow: 0 20px 60px rgba(111, 36, 70, .17);
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 400;
+    color: #8d3158;
+    text-align: center;
+    margin: 0 0 10px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    color: #a24a6e;
+    margin-bottom: 40px;
+}
+
+.index-section {
+    margin-bottom: 35px;
+}
+
+.index-section h2 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #8d3158;
+    border-bottom: 2px solid #e8b4d1;
+    padding-bottom: 12px;
+    margin: 0 0 20px;
+}
+
+.index-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.index-list li {
+    padding: 12px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #633048;
+}
+
+.index-list a {
+    color: #8d3158;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.index-list a:hover {
+    color: #a24a6e;
+    text-decoration: underline;
+}
+
+.code-reference {
+    background: rgba(141, 49, 88, 0.05);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: #633048;
+    margin-top: 4px;
+}
+
+.divider {
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 8px;
+    margin: 40px 0;
+    color: #a24a6e;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 14px;
+    color: #8d4865;
+    font-style: italic;
+}
+
+.cta-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: #8d3158;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    font-weight: 500;
+}
+
+.cta-link:hover {
+    background: #a24a6e;
+    transform: scale(1.05);
+}
+
+.center-cta {
+    text-align: center;
+}
+
+@media(max-width:600px) {
+    .container {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 36px;
+    }
+    
+    .index-section h2 {
+        font-size: 20px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🦋 Birthday Surprise 🌸</h1>
+    <p class="subtitle">A Beautiful Interactive Birthday Message</p>
+    
+    <div class="divider">✨ 🌷 ✨</div>
+    
+    <!-- STRUCTURE -->
+    <div class="index-section">
+        <h2>📄 Page Structure</h2>
+        <ul class="index-list">
+            <li>
+                <strong>Page One (Home):</strong> Welcome section with animated butterfly button
+                <div class="code-reference">&lt;section class="page-one" id="home"&gt;</div>
+            </li>
+            <li>
+                <strong>Page Two (Wishes):</strong> Birthday message card with heartfelt wishes
+                <div class="code-reference">&lt;section class="page-two" id="wishes"&gt;</div>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- VISUAL ELEMENTS -->
+    <div class="index-section">
+        <h2>🎨 Visual Elements</h2>
+        <ul class="index-list">
+            <li>
+                <strong>Butterfly Button:</strong> Interactive element to scroll to wishes
+                <div class="code-reference">.butterfly-button { animation: .5s ease }</div>
+            </li>
+            <li>
+                <strong>Falling Flowers:</strong> 40 animated flowers with random timing
+                <div class="code-reference">.flower { animation: fall linear infinite }</div>
+            </li>
+            <li>
+                <strong>Sparkles:</strong> Twinkling accent elements throughout
+                <div class="code-reference">.sparkle { animation: sparkle 2s infinite }</div>
+            </li>
+            <li>
+                <strong>Gradient Backgrounds:</strong> Soft pink gradients with radial highlights
+                <div class="code-reference">linear-gradient(135deg, #ffd9e9, #f4a5c5, #ffe5ef)</div>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- INTERACTIVE FEATURES -->
+    <div class="index-section">
+        <h2>⚡ Interactive Features</h2>
+        <ul class="index-list">
+            <li>
+                <strong>Smooth Scrolling:</strong> Scroll behavior enabled globally
+                <div class="code-reference">html { scroll-behavior: smooth }</div>
+            </li>
+            <li>
+                <strong>Open Wish Function:</strong> Smooth scroll to wishes section
+                <div class="code-reference">function openWish() { scrollIntoView() }</div>
+            </li>
+            <li>
+                <strong>Random Flower Generation:</strong> Dynamic flower animations
+                <div class="code-reference">Math.random() * flowers.length</div>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- ANIMATIONS -->
+    <div class="index-section">
+        <h2>✨ Animations & Effects</h2>
+        <ul class="index-list">
+            <li><strong>@butterflyFloat:</strong> Floating butterfly with gentle rotation</li>
+            <li><strong>@fall:</strong> Falling flowers with 360° rotation</li>
+            <li><strong>@sparkle:</strong> Pulsing opacity and scale effect</li>
+            <li><strong>@fadeIn:</strong> Smooth entrance animation for intro text</li>
+        </ul>
+    </div>
+    
+    <!-- RESPONSIVE DESIGN -->
+    <div class="index-section">
+        <h2>📱 Responsive Design</h2>
+        <ul class="index-list">
+            <li>Mobile breakpoint: max-width 600px</li>
+            <li>Adaptive button and text sizing</li>
+            <li>Adjusted padding and spacing for smaller screens</li>
+            <li>Corner message becomes inline on mobile</li>
+        </ul>
+    </div>
+    
+    <!-- COLOR PALETTE -->
+    <div class="index-section">
+        <h2>🎨 Color Palette</h2>
+        <ul class="index-list">
+            <li><strong>Primary Text:</strong> #71304c (Deep mauve)</li>
+            <li><strong>Headings:</strong> #8d3158 (Rich rose)</li>
+            <li><strong>Secondary Text:</strong> #a24a6e (Dusty rose)</li>
+            <li><strong>Accents:</strong> #633048 (Deep plum)</li>
+            <li><strong>Backgrounds:</strong> Gradient blend #ffd9e9 → #f4a5c5 → #ffe5ef</li>
+        </ul>
+    </div>
+    
+    <!-- FONT & TYPOGRAPHY -->
+    <div class="index-section">
+        <h2>🔤 Typography</h2>
+        <ul class="index-list">
+            <li>Primary Font: Georgia, Times New Roman, serif</li>
+            <li>Responsive sizing using clamp()</li>
+            <li>Letter-spacing for elegant spacing</li>
+            <li>Line-height: 2 for readable wish text</li>
+        </ul>
+    </div>
+    
+    <div class="divider">🌸 💗 🌸</div>
+    
+    <div class="footer">
+        <p>A heartfelt birthday message created with love and beautiful animations 🦋</p>
+        <p>Scroll through the page to experience the full interactive gift</p>
+        <div class="center-cta">
+            <a href="birthday-surprise.html" class="cta-link">Open Birthday Surprise →</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Birthday Surprise 🦋</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #71304c;
+}
+
+/* =========================
+   FIRST PAGE
+========================= */
+
+.page-one {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.7), transparent 25%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,.55), transparent 25%),
+        linear-gradient(135deg, #ffd9e9, #f4a5c5, #ffe5ef);
+}
+
+.intro {
+    position: relative;
+    z-index: 5;
+    animation: fadeIn 1.5s ease;
+}
+
+.small-text {
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    color: #8d4865;
+}
+
+.intro h1 {
+    font-size: clamp(34px, 8vw, 60px);
+    font-weight: 400;
+    margin: 0 0 35px;
+    color: #8d3158;
+}
+
+/* Butterfly Button */
+
+.butterfly-button {
+    border: none;
+    background: rgba(255,255,255,.48);
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    box-shadow:
+        0 15px 50px rgba(119, 36, 73, .2),
+        inset 0 0 25px rgba(255,255,255,.6);
+
+    backdrop-filter: blur(10px);
+
+    transition: .5s ease;
+}
+
+.butterfly-button:hover {
+    transform: scale(1.08);
+    box-shadow:
+        0 20px 65px rgba(119, 36, 73, .28),
+        inset 0 0 35px rgba(255,255,255,.8);
+}
+
+.butterfly {
+    display: block;
+    font-size: 75px;
+    animation: butterflyFloat 3s ease-in-out infinite;
+}
+
+.button-text {
+    display: block;
+    margin-top: 12px;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    color: #73304e;
+    font-style: italic;
+}
+
+@keyframes butterflyFloat {
+    0%,100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(3deg);
+    }
+}
+
+/* =========================
+   SECOND PAGE
+========================= */
+
+.page-two {
+    min-height: 100vh;
+    position: relative;
+    padding: 70px 20px 130px;
+
+    background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,.6), transparent 25%),
+        radial-gradient(circle at 90% 90%, rgba(255,255,255,.5), transparent 25%),
+        linear-gradient(135deg, #ffe1ed, #f5b1cc, #ffdfea);
+}
+
+.wish-card {
+    width: min(92%, 760px);
+    margin: auto;
+    padding: 50px 35px;
+
+    background: rgba(255,255,255,.48);
+    border: 1px solid rgba(255,255,255,.75);
+    border-radius: 32px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 20px 60px rgba(111, 36, 70, .17);
+
+    text-align: center;
+}
+
+.wish-card h1 {
+    margin: 0 0 10px;
+    font-size: clamp(35px, 8vw, 58px);
+    font-weight: 400;
+    color: #8d3158;
+}
+
+.wish-card h2 {
+    margin: 0 0 35px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #a24a6e;
+    font-style: italic;
+}
+
+.wish-text {
+    font-size: 17px;
+    line-height: 2;
+    text-align: left;
+    color: #633048;
+}
+
+.divider {
+    margin: 30px auto;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+
+/* Bottom Corner */
+
+.corner-message {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+
+    max-width: 360px;
+
+    text-align: right;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    font-style: italic;
+
+    color: #71304c;
+}
+
+/* Falling flowers */
+
+.flower {
+    position: fixed;
+    top: -70px;
+    pointer-events: none;
+    z-index: 2;
+
+    animation: fall linear infinite;
+    opacity: .9;
+}
+
+@keyframes fall {
+
+    0% {
+        transform:
+            translateY(-80px)
+            rotate(0deg);
+    }
+
+    100% {
+        transform:
+            translateY(115vh)
+            rotate(360deg);
+    }
+}
+
+/* Sparkles */
+
+.sparkle {
+    position: absolute;
+    color: white;
+    opacity: .7;
+    animation: sparkle 2s infinite alternate;
+}
+
+@keyframes sparkle {
+
+    from {
+        opacity: .2;
+        transform: scale(.8);
+    }
+
+    to {
+        opacity: .9;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile */
+
+@media(max-width:600px) {
+
+    .butterfly-button {
+        width: 190px;
+        height: 190px;
+    }
+
+    .butterfly {
+        font-size: 65px;
+    }
+
+    .wish-card {
+        padding: 38px 23px;
+    }
+
+    .wish-text {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    .corner-message {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin: 35px 15px 0 auto;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     PAGE ONE
+========================= -->
+
+<section class="page-one" id="home">
+
+    <div class="sparkle" style="left:10%;top:15%;font-size:22px;">✦</div>
+    <div class="sparkle" style="right:10%;top:25%;font-size:18px;">✧</div>
+    <div class="sparkle" style="left:15%;bottom:20%;font-size:20px;">✦</div>
+    <div class="sparkle" style="right:18%;bottom:18%;font-size:25px;">✧</div>
+
+    <div class="intro">
+
+        <div class="small-text">
+            A little birthday surprise...
+        </div>
+
+        <h1>
+            Made with lots of love 🌸
+        </h1>
+
+        <button
+            class="butterfly-button"
+            onclick="openWish()"
+        >
+
+            <span class="butterfly">
+                🦋
+            </span>
+
+            <span class="button-text">
+                For a cutest sister
+            </span>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE TWO
+========================= -->
+
+<section class="page-two" id="wishes">
+
+    <div class="sparkle" style="left:7%;top:12%;font-size:22px;">✦</div>
+    <div class="sparkle" style="right:8%;top:18%;font-size:19px;">✧</div>
+
+    <div class="wish-card">
+
+        <h1>
+            Happy Birthday 🌷
+        </h1>
+
+        <h2>
+            To someone truly special
+        </h2>
+
+        <div class="divider">
+            🌸 ✨ 🌸
+        </div>
+
+
+        <div class="wish-text">
+
+            <p>
+                Wishing you the happiest birthday and a beautiful year ahead
+                filled with happiness, peace, good health, success and all the
+                little things that make life feel special. May every morning
+                bring you a new reason to smile, every difficult day make you
+                stronger, and every beautiful moment remind you just how
+                wonderful you truly are. You deserve a life full of genuine
+                happiness, beautiful memories and people who appreciate your
+                heart.
+            </p>
+
+            <p>
+                From everything I've heard about you, you really are one of
+                those sweetest people who leave a warm little feeling behind
+                without even trying. Your brother has mentioned so many cute
+                little things about you — your talks, your funny moments,
+                the little conversations you both have and those random
+                memories that somehow become the stories people remember and
+                smile about later. It is honestly lovely to hear someone talk
+                about their sister with so much affection, because those tiny
+                everyday moments are often the most precious ones.
+            </p>
+
+            <p>
+                I hope you always keep that sweetness in you. Never lose the
+                kindness, warmth and lovely personality that make you who you
+                are. May you always have the courage to chase what you want,
+                the strength to get through whatever life puts in your way,
+                and the wisdom to recognize how deserving you are of every
+                good thing that comes your way.
+            </p>
+
+            <p>
+                On your birthday, I genuinely wish that life becomes softer
+                and kinder to you. May you be blessed with countless reasons
+                to laugh until your stomach hurts, people who make you feel
+                understood, moments that turn into lifelong memories, and
+                dreams that slowly become beautiful realities. May your heart
+                always have something to look forward to and may you never
+                forget how loved and valued you are by the people around you.
+            </p>
+
+            <p>
+                And most importantly, I hope the coming year gives you
+                everything you have been quietly wishing for. May your
+                happiness never depend on temporary things, may your smile
+                always find its way back after difficult days, and may every
+                new chapter of your life bring you closer to the person you
+                want to become.
+            </p>
+
+            <p>
+                So here's to another beautiful year of you — more laughter,
+                more adventures, more cute conversations, more unforgettable
+                moments and many, many reasons to celebrate. Keep being the
+                sweetest person you are, keep smiling that beautiful smile,
+                and never underestimate how special your presence can be in
+                someone's life.
+            </p>
+
+            <p>
+                <strong>
+                    Happy Birthday once again. 🌸
+                </strong>
+                May you always be surrounded by love, blessings, happiness
+                and everything your beautiful heart deserves. Wishing you
+                nothing but the very best today, tomorrow and in every year
+                that follows. 💗✨
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="corner-message">
+
+        "Some people deserve to be celebrated simply for the warmth and
+        goodness they bring into the lives around them. Wishing you a life
+        filled with happiness, respect, blessings and beautiful moments —
+        always." 🌷
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* Open second page */
+
+function openWish() {
+
+    document.getElementById("wishes")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+/* Falling Flowers */
+
+const flowers = [
+    "🌸",
+    "🌷",
+    "🌺",
+    "🌼",
+    "🪻",
+    "💮",
+    "🌹",
+    "🏵️"
+];
+
+for (let i = 0; i < 40; i++) {
+
+    const flower =
+        document.createElement("div");
+
+    flower.className = "flower";
+
+    flower.innerText =
+        flowers[
+            Math.floor(
+                Math.random() * flowers.length
+            )
+        ];
+
+    flower.style.left =
+        Math.random() * 100 + "vw";
+
+    flower.style.fontSize =
+        (14 + Math.random() * 24) + "px";
+
+    flower.style.animationDuration =
+        (6 + Math.random() * 9) + "s";
+
+    flower.style.animationDelay =
+        (-Math.random() * 15) + "s";
+
+    document.body.appendChild(flower);
+
+}
+
+</script>
+
+</body>
+</html>
